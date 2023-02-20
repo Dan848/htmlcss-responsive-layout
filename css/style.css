@@ -22,7 +22,13 @@
 body {
     font-family: 'PT Sans', sans-serif;
     background-color: var(--light-color);
-    color: var(--dark-color);    
+    color: var(--dark-color);
+    line-height: 2rem;    
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
 h3 {
@@ -49,13 +55,13 @@ img {
 
 /* LAYOUT */
 .container {
-    max-width: 1200px;
+    max-width: 480px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 section {
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 /*Text*/
@@ -94,14 +100,72 @@ header a {
     padding: 1rem;
 }
 
-/* MAIN */
+.fa-bars {
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
 
+/* MAIN */
 main {
  margin-top: 80px;
 }
 
-/*Steps*/
-
-.steps .card {
+/* Steps */
+.steps .card{
     background-color: var(--bg-header-light);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.steps .double .card {
+    text-align: left;
+    padding-bottom: 0;
+}
+
+.steps h3 {
+    color: var(--bg-header);
+}
+
+.steps p {
+    color: #5f5f5f;
+    font-weight: 600
+}
+
+.steps a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: var(--bg-header);
+    color: var(--light-color);
+    padding: 0.3rem 4rem;
+    border-radius: 40px;
+    margin: 1.5rem 0;
+}
+
+.steps img {
+    margin-bottom: -11px;
+}
+
+.steps .ico {
+    color: var(--bg-header);
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+/* Planning */
+
+#planning {
+    background-color: var(--bg-section);
+    color: var(--light-color);
+}
+
+#planning .card {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 60px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
 }
