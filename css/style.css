@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'PT Sans', sans-serif;
     background-color: var(--light-color);
@@ -92,9 +96,17 @@ section {
     text-decoration: underline;
 }
 
+.letter-space {
+    letter-spacing: 3px;
+}
+
 /*********************
     Section
 **********************/
+
+#planning, #testimonials, #features, #about-us, #get-started {
+    scroll-margin-top: 70px;
+}
 
 /* HEADER */
 header {
@@ -114,12 +126,20 @@ header nav {
     align-items: center;
 }
 
-header ul {
+ul {
     display: none;
 }
 
 header a {
     padding: 1rem;
+}
+
+ul li:last-child a{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 80px;
+    margin-left: 2rem;
 }
 
 .fa-bars {
@@ -132,7 +152,7 @@ main {
  margin-top: 80px;
 }
 
-/* STEPS */
+/* 1 STEPS */
 .steps .card{
     background-color: var(--bg-header-light);
     border-radius: 20px;
@@ -170,7 +190,7 @@ main {
     margin-bottom: 1rem;
 }
 
-/* PLANNING */
+/* 2 PLANNING */
 
 #planning {
     background-color: var(--bg-section);
@@ -182,9 +202,30 @@ main {
     color: var(--dark-color);
     border-radius: 60px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* TESTIMONIALS */
+#planning .card em {
+    margin-bottom: 1rem;
+}
+
+#planning h2 {
+    margin-top: 3rem;
+}
+
+#planning .ico {
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-section);
+    border-radius: 50%;
+    line-height: 50px;
+    cursor: pointer;
+    color: var(--dark-color);
+}
+
+/* 3 TESTIMONIALS */
 
 #testimonials {
     text-align: center;
@@ -218,14 +259,18 @@ main {
     object-fit: cover;
 }
 
-.info i {
+#testimonials .info i {
     font-size: 1.2rem;
 }
 
-/* FEATURES */
+/* 4 FEATURES */
 #features {
     background-color: var(--bg-section);
     color: var(--light-color);
+}
+
+#features .container>h2 {
+    text-align: center;
 }
 
 #features .card{
@@ -234,7 +279,7 @@ main {
     color: #5f5f5f;
 }
 
-#features .card h2,h3 {
+#features .card h2, #features .card h3 {
     color: var(--bg-section);
     margin-bottom: 1rem;
 }
@@ -255,7 +300,7 @@ main {
     margin: 1.5rem 0;
 }
 
-/* ABOUT US */
+/* 5 ABOUT US */
 #about-us h2 {
     color: var(--bg-section);
     font-size: 3rem;
@@ -290,6 +335,10 @@ main {
     background-color: var(--bg-section);
     padding: 0.3rem 1rem;
     border-radius: 40px;
+}
+
+.fa-linkedin {
+    margin-right: 0.5rem;
 }
 
 /* GET STARTED */
@@ -339,7 +388,7 @@ footer .underline{
 
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 992;
+        max-width: 992px;
     }
 
     .row {
@@ -365,6 +414,11 @@ footer .underline{
         height: calc(100% - 10px);
     }
 
+    #planning h2, #about-us h2 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
     #testimonials .card {
         display: flex;
         flex-direction: row;
@@ -373,13 +427,15 @@ footer .underline{
 
     #testimonials .info {
         max-width: 70%;
+        text-align: left;
     }    
 
-
-
-
-    #features .col, #about-us .col {
+    #features .col {
         width: calc((100% / 2) - 10px);       
+    }
+
+    #about-us .double.col {
+        width: 60%
     }
 
     #get-started .container, footer .container {
@@ -388,9 +444,48 @@ footer .underline{
 }
 
 @media screen and (min-width: 992px) {
-    
-}
+        .container {
+            max-width: 1200px;
+        }
+        
+        .fa-bars {
+            display: none;
+        }
 
-@media screen and (min-width: 1200px) {
-    
-}
+        nav ul {
+            display: flex;
+        }
+
+        .steps .double .card{
+            display: flex;
+        }
+
+        .steps .double img {
+            width: 50%;
+            margin-bottom: 0;
+        }
+
+        #planning h2 {
+        font-size: 2rem;
+        }
+
+        #planning .col{
+            width: calc((100% / 2) - 10px);       
+        }
+
+        #planning .row {
+            align-items: flex-end;
+        }
+
+        #planning .col:last-child {
+            padding: 0 3rem;
+        }
+        
+        #planning .card img {
+            width: 70%;
+        }
+
+        #features .col {
+            width: calc((100% / 3) - 10px);
+        }
+    }
